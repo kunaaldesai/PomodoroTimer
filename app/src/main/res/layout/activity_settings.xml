@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background"
+    android:fitsSystemWindows="true">
+
+    <!-- Pomodoro Time Input -->
+    <EditText
+        android:id="@+id/pomodoroTimeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pomodoro time (minutes)"
+        android:inputType="number"
+        android:layout_centerVertical="true"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Short Break Time Input -->
+    <EditText
+        android:id="@+id/shortBreakTimeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Short break time (minutes)"
+        android:inputType="number"
+        android:layout_below="@id/pomodoroTimeInput"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Long Break Time Input -->
+    <EditText
+        android:id="@+id/longBreakTimeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Long break time (minutes)"
+        android:inputType="number"
+        android:layout_below="@id/shortBreakTimeInput"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Cycles Until Long Break Input -->
+    <EditText
+        android:id="@+id/cyclesUntilLongBreakInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cycles until long break"
+        android:inputType="number"
+        android:layout_below="@id/longBreakTimeInput"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Save"
+        android:layout_centerHorizontal="true"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:elevation="8dp"
+        android:textSize="18sp"
+        android:layout_below="@id/cyclesUntilLongBreakInput"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>

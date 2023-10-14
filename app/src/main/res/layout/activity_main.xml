@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <!-- Timer Label -->
+    <TextView
+        android:id="@+id/timerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/startButton"
+        android:layout_marginBottom="20dp"
+        android:text="25:00"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp" />
+
+    <!-- Start Button -->
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="211dp"
+        android:layout_height="160dp"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:text="Start"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF" />
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/startButton"
+        android:layout_marginTop="20dp"
+        android:text="Reset"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:elevation="8dp"
+        android:textSize="18sp" />
+
+    <!-- Settings Button -->
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/resetButton"
+        android:layout_marginTop="20dp"
+        android:text="Settings"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:elevation="8dp"
+        android:textSize="18sp" />
+
+    <!-- Cycles until Long Break Label -->
+    <TextView
+        android:id="@+id/cyclesUntilLongBreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Cycles until long break: 4"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <!-- Cycles Completed Label -->
+    <TextView
+        android:id="@+id/cyclesCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cyclesUntilLongBreak"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-medium"
+        android:text="Cycles Completed: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+</RelativeLayout>
