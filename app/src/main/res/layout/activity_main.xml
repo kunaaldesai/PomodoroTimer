@@ -13,12 +13,13 @@
         android:id="@+id/timerLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_above="@id/startButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/cairo_semibold"
         android:text="25:00"
         android:textColor="#FFFFFF"
-        android:textSize="50sp" />
+        android:textSize="90sp" />
 
     <!-- Start Button -->
     <Button
@@ -27,22 +28,24 @@
         android:layout_height="160dp"
         android:layout_centerInParent="true"
         android:background="@android:color/transparent"
+        android:fontFamily="@font/cairo_semibold"
         android:text="Start"
-        android:textSize="24sp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
     <!-- Reset Button -->
     <Button
         android:id="@+id/resetButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/startButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Reset"
-        android:background="#FFFFFF"
-        android:textColor="#000000"
+        android:background="#000000"
         android:elevation="8dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="Reset"
+        android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <!-- Settings Button -->
@@ -50,13 +53,14 @@
         android:id="@+id/settingsButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/resetButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Settings"
-        android:background="#FFFFFF"
-        android:textColor="#000000"
+        android:background="#000000"
         android:elevation="8dp"
+        android:fontFamily="@font/cairo_semibold"
+        android:text="Settings"
+        android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <!-- Cycles until Long Break Label -->
@@ -67,7 +71,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/cairo_semibold"
         android:text="Cycles until long break: 4"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
@@ -79,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/cyclesUntilLongBreak"
         android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/cairo_semibold"
         android:text="Cycles Completed: 0"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />

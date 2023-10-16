@@ -1,67 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@drawable/gradient_background"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
 
-    <!-- Pomodoro Time Input -->
-    <EditText
-        android:id="@+id/pomodoroTimeInput"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pomodoro time (minutes)"
-        android:inputType="number"
-        android:layout_centerVertical="true"
-        android:backgroundTint="#FFFFFF"
-        android:layout_marginBottom="8dp" />
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
 
-    <!-- Short Break Time Input -->
-    <EditText
-        android:id="@+id/shortBreakTimeInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Short break time (minutes)"
-        android:inputType="number"
-        android:layout_below="@id/pomodoroTimeInput"
-        android:backgroundTint="#FFFFFF"
-        android:layout_marginBottom="8dp" />
+        <!-- Card layout for Time Settings -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="4dp">
 
-    <!-- Long Break Time Input -->
-    <EditText
-        android:id="@+id/longBreakTimeInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Long break time (minutes)"
-        android:inputType="number"
-        android:layout_below="@id/shortBreakTimeInput"
-        android:backgroundTint="#FFFFFF"
-        android:layout_marginBottom="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <!-- Cycles Until Long Break Input -->
-    <EditText
-        android:id="@+id/cyclesUntilLongBreakInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cycles until long break"
-        android:inputType="number"
-        android:layout_below="@id/longBreakTimeInput"
-        android:backgroundTint="#FFFFFF"
-        android:layout_marginBottom="16dp" />
+                <!-- Pomodoro Time Input -->
+                <EditText
+                    android:id="@+id/pomodoroTimeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:hint="Pomodoro time (minutes)"
+                    android:inputType="number" />
 
-    <!-- Save Button -->
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:text="Save"
-        android:layout_centerHorizontal="true"
-        android:background="#FFFFFF"
-        android:textColor="#000000"
-        android:elevation="8dp"
-        android:textSize="18sp"
-        android:layout_below="@id/cyclesUntilLongBreakInput"
-        android:layout_marginTop="20dp" />
+                <!-- Short Break Time Input -->
+                <EditText
+                    android:id="@+id/shortBreakTimeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:hint="Short break time (minutes)"
+                    android:inputType="number" />
 
-</RelativeLayout>
+                <!-- Long Break Time Input -->
+                <EditText
+                    android:id="@+id/longBreakTimeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:hint="Long break time (minutes)"
+                    android:inputType="number" />
+
+                <!-- Cycles Until Long Break Input -->
+                <EditText
+                    android:id="@+id/cyclesUntilLongBreakInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:hint="Cycles until long break"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card layout for General Settings -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Vibration Setting -->
+                <Switch
+                    android:id="@+id/vibrateSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:text="Enable Vibration" />
+
+                <!-- Save Button -->
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#000000"
+                    android:elevation="8dp"
+                    android:fontFamily="@font/cairo_semibold"
+                    android:text="Save"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>
