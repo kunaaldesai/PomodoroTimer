@@ -9,6 +9,7 @@ import android.os.Looper
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.kunaaldesai.pomodorotimer.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,0 +1,33 @@
+# Android/Gradle build output
+.gradle/
+build/
+*/build/
+!src/**/build/
+
+# IDE specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Local configuration
+local.properties
+
+# Generated/cached data
+.cxx/
+.externalNativeBuild/
+captures/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Packaging outputs
+*.apk
+*.aab
+*.ap_
+
+# Keystores
+*.jks
+*.keystore
