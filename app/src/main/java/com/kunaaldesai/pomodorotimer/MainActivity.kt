@@ -3,10 +3,13 @@ package com.kunaaldesai.pomodorotimer
 import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.VibrationEffect
 import android.os.Vibrator
+import android.os.VibratorManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cyclesCompletedLabel: TextView
     private lateinit var cyclesUntilLongBreakLabel: TextView
     private lateinit var mediaPlayer: MediaPlayer
-    private lateinit var vibrator: Vibrator
+    private var vibrator: Vibrator? = null
     private var isRunning = false
     private var cyclesCompleted = 0
     private var cyclesUntilLongBreak = 4
@@ -53,7 +56,13 @@ class MainActivity : AppCompatActivity() {
         cyclesUntilLongBreakLabel = findViewById(R.id.cyclesUntilLongBreak)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.timer_sound)
-        vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager = getSystemService(VibratorManager::class.java)
+            vibratorManager?.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+        }
 
         startButton.setOnClickListener {
             if (isRunning) {
@@ -120,7 +129,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 playSound()
                 if (isVibrationEnabled) {
-                    vibrator.vibrate(2000) // Vibrate for 2 seconds
+                    vibrateFor(2000) // Vibrate for 2 seconds
                 }
                 when (currentTimerState) {
                     TimerState.WORK -> {
@@ -168,6 +177,17 @@ class MainActivity : AppCompatActivity() {
     private fun playSound() {
         if (!mediaPlayer.isPlaying) {
             mediaPlayer.start()
+        }
+    }
+
+    private fun vibrateFor(durationMillis: Long) {
+        val vib = vibrator ?: return
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val effect = VibrationEffect.createOneShot(durationMillis, VibrationEffect.DEFAULT_AMPLITUDE)
+            vib.vibrate(effect)
+        } else {
+            @Suppress("DEPRECATION")
+            vib.vibrate(durationMillis)
         }
     }
 
